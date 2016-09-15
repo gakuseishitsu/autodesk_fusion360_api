@@ -13,13 +13,13 @@
 3. するとでてくるウィンドウの中に「Scripts」や「add-Ins」と書かれたタブが見えるので, 「Scripts」タグの中の「My Scripts」フォルダを選択して「Create」ボタンを押す.  
 4. 新しく出たウィンドウで設定を行い「Create」ボタンを押す. 設定することは少なく「Scripts」か「add-ins」か, 言語はどれにするか(自分は慣れているC++), あとはスクリプトの名前.  
 5. すると「My Scripts」フォルダの中に先ほど作成したスクリプトができるので「Edit」ボタンで編集して「Run」ボタンで実行できる. 何もせずに実行すると簡単なメッセージウィンドウが出てきて終わり.  
-6. 「Edit」を押すとそれぞれの言語に対応した開発環境が起動してあとはプログラミングするだけ, 簡単なスケッチを各コード※をこのプロジェクトの「src」フォルダにいれてある.  
+6. 「Edit」を押すとそれぞれの言語に対応した開発環境が起動してあとはプログラミングするだけ, 簡単なスケッチを書くコード※をこのプロジェクトの「src」フォルダにいれてある.  
 7. もっといろんな機能が使いたかったら参考文献[2]をみるといい.  
 
 ※ スケッチを開いて直線, 円, スプライン曲線を描くプログラム(test1_CPP.cpp)
 
 ## References
-* Fusion360 APIの初めかたについて書かれているサイト  
+* Fusion360 APIの始め方について書かれているサイト  
 <a href="http://autodeskfusion360.github.io/#section_welcome">[1] Autodesk Fusion 360 API</a>
 * Fusion360 APIのユーザリファレンスサイト  
 <a href="http://fusion360.autodesk.com/learning/learning.html?guid=GUID-A92A4B10-3781-4925-94C6-47DA85A4F65A">[2] Welcome to Fusion's Programming Interface</a>
