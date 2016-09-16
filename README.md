@@ -18,6 +18,10 @@
 
 ※ スケッチを開いて直線, 円, スプライン曲線を描くプログラム(test1_CPP.cpp)
 
+## Advanced
+* 描画をすべてハードコーティングで行ってもよいが, Fusion360 APIにはウィンドウを出して引数を受け取って処理をするということもできるようなので, 試してみたい.
+* もとから入っているアドインの中にギアを自動生成してくれる「SpurGear」というものがあったので機能を簡略化したものを「src」に「SpurGear_mod.cpp」として置いた. これを理解できればウィンドウで引数を受け取って描画という一連の流れができるはず.
+
 ## References
 * Fusion360 APIの始め方について書かれているサイト  
 <a href="http://autodeskfusion360.github.io/#section_welcome">[1] Autodesk Fusion 360 API</a>
