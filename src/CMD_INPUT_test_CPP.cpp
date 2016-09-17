@@ -68,13 +68,19 @@ namespace {
 	}
 
 
-	Ptr<ExtrudeFeature> createExtrude(Ptr<Profile> prof, double thickness)
+	Ptr<ExtrudeFeature> createExtrude(Ptr<Profile> prof, double thickness, bool cut)
 	{
 		if (!newComp)
 			return nullptr;
 		Ptr<Features> features = newComp->features();
 		Ptr<ExtrudeFeatures> extrudes = features->extrudeFeatures();
-		Ptr<ExtrudeFeatureInput> extInput = extrudes->createInput(prof, FeatureOperations::JoinFeatureOperation);
+		Ptr<ExtrudeFeatureInput> extInput;
+
+		if(cut)
+			extInput = extrudes->createInput(prof, FeatureOperations::CutFeatureOperation);
+		else
+			extInput = extrudes->createInput(prof, FeatureOperations::JoinFeatureOperation);
+
 		Ptr<ValueInput> distance = ValueInput::createByReal(thickness);
 		extInput->setDistanceExtent(false, distance);
 		return extrudes->add(extInput);
@@ -112,10 +118,10 @@ namespace {
 		Ptr<Profiles> profs = sketch->profiles();
 
 		Ptr<Profile> profOne1 = profs->item(1);
-		Ptr<ExtrudeFeature> extOne1 = createExtrude(profOne1, thicknessZ);
+		Ptr<ExtrudeFeature> extOne1 = createExtrude(profOne1, thicknessZ,0);
 
 		Ptr<Profile> profOne2 = profs->item(3);
-		Ptr<ExtrudeFeature> extOne2 = createExtrude(profOne2, thicknessZ);
+		Ptr<ExtrudeFeature> extOne2 = createExtrude(profOne2, thicknessZ,0);
 
 
 		// Draw rectangule
@@ -136,7 +142,7 @@ namespace {
 		// Create the extrusion
 		Ptr<Profiles> profs2 = sketch2->profiles();
 		Ptr<Profile> profOne3 = profs2->item(0);
-		Ptr<ExtrudeFeature> extOne3 = createExtrude(profOne3, thicknessZ);
+		Ptr<ExtrudeFeature> extOne3 = createExtrude(profOne3, thicknessZ,0);
 
 		// pattern copy of support material
 		Ptr<ObjectCollection> entities = ObjectCollection::create();
